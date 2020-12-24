@@ -1,0 +1,39 @@
+#include "/home/juggy1233/colors/rick"
+
+// WM
+bspwm.border: BORDER
+i3.border: BORDER
+qtile.border: BORDER
+
+// dmenu
+dmenu.background: BACKGROUND
+dmenu.foreground: FOREGROUND
+dmenu.accent: COLOR3
+/*                'bg',           'text col',     'bg-alt-row', 'hl-bg', 'hl-fg' */
+rofi.color-window: BACKGROUND,     BACKGROUND,     BACKGROUND
+rofi.color-normal: BACKGROUND,     FOREGROUND_ALT, BACKGROUND, FOREGROUND_ALT, FOREGROUND
+rofi.color-active: BACKGROUND,     FOREGROUND,     BACKGROUND, BACKGROUND, COLOR0
+rofi.color-urgent: BACKGROUND,     FOREGROUND,     BACKGROUND, BACKGROUND, COLOR0
+
+// sxiv
+Sxiv.background: #282828
+Sxiv.foreground: FOREGROUND
+
+// polybar
+polybar.background: BACKGROUND
+polybar.foreground: FOREGROUND
+polybar.foreground_alt: FOREGROUND_ALT
+
+polybar.color0:   COLOR0
+polybar.color100: COLOR100
+polybar.color1:   COLOR1
+polybar.color101: COLOR101
+polybar.color2:   COLOR2
+polybar.color102: COLOR102
+polybar.color3:   COLOR3
+polybar.color103: COLOR103
+polybar.color4:   COLOR4
+polybar.color104: COLOR104
+polybar.color5:   COLOR5
+polybar.color105: COLOR105
+

@@ -1,0 +1,9 @@
+#!/bin/sh
+read file <&0
+case "$1" in
+"C-w")
+	cp "$file" ~/Pictures/wall.jpg
+	feh --bg-fill ~/Pictures/wall.jpg
+;;
+esac
+

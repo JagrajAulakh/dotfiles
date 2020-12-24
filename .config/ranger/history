@@ -1,0 +1,50 @@
+touch main.c
+find 
+rename integrety.pdf
+
+open_with 1
+mkdir solutions
+touch people.py
+touch wpcc_people.txt
+rename people_gen.py
+touch listEx2.py
+touch FloodFillTester.java
+touch
+touch HugeInteger.java
+mkdir 1
+mkdir 2
+touch Airport.java
+rename PolynomialTester_GOOD.java
+shell 
+rename 17 - Prof's Summary Notes - Chapter 12 pgs 1-15.pdf
+open_with 13
+open_with 
+filter 
+search desk
+shell jjh
+mkdir assignment_bonus
+rename assignment_bonus.tex
+search pic
+mkdir My Everything
+search clean
+mkdir Tick Tock
+mkdir practice
+touch fuck.tex
+search rofi
+search .conf
+search .vim
+search zat
+search zath
+rename Thunar
+search sx
+search better
+search .con
+search troll
+search qt
+w
+rename 7
+search aria
+open_with vim
+open_with subl
+touch listEx4.py
+delete

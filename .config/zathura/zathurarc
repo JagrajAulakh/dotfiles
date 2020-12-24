@@ -1,0 +1,12 @@
+set font "sourcecode pro 12"
+set selection-clipboard clipboard
+set default-bg "#222222"
+set show-scrollbars
+set scrollbar-fg "#dddddd"
+set scrollbar-bg "#000000"
+
+map = zoom in
+map J scroll half-down
+map K scroll half-up
+map I recolor
+map b toggle_statusbar

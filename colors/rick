@@ -1,0 +1,20 @@
+// vim:ft=c
+
+#define FOREGROUND     #dfdfdf
+#define FOREGROUND_ALT #808080
+#define BACKGROUND     #1c1c1c
+#define BACKGROUND_ALT #A01C1C1C
+
+#define COLOR0   #7F9AAB
+#define COLOR100 #A07F9AAB
+#define COLOR1   #93AEBF
+#define COLOR101 #A093AEBF
+#define COLOR2   #7F9AAB
+#define COLOR102 #A07F9AAB
+#define COLOR3   #6C8697
+#define COLOR103 #A06C8697
+#define COLOR4   #597384
+#define COLOR104 #A0597384
+
+#define BORDER COLOR0
+
