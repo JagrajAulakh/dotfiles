@@ -1,0 +1,16 @@
+set so=15
+set number
+set incsearch
+set smartcase ignorecase
+
+let mapleader=' '
+
+nmap Y y$
+nmap <leader>y "+y
+nmap <leader>Y "+y$
+vmap <Leader>y "+y
+vmap <Leader>Y "+y$
+
+nmap zh z10h
+nmap zl z10l
+
