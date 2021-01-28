@@ -17,5 +17,5 @@
 
 
 # rsync -av --delete --exclude={/juggy1233/.cache/*,/juggy1233/.steam*} /home/juggy1233 /mnt/wd/Legion\ Backup/manjaro
-rsync --size-only -av --progress --exclude={/juggy1233/.cache/*,/juggy1233/.steam*} /home/juggy1233 /mnt/hdd/backups/manjaro
-rsync -av --progress homeserver:/home/juggy1233/minecraft/ /mnt/hdd/backups/bigbois_server
+rsync --size-only -av --progress --exclude={juggy1233/.cache,juggy1233/.steam,juggy1233/.local/share/Steam} /home/juggy1233 /mnt/hdd/backups/manjaro
+rsync -av --progress --delete homeserver:/home/juggy1233/minecraft/ /mnt/hdd/backups/bigbois_server

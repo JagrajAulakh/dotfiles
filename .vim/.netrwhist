@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/juggy1233/colors'
+let g:netrw_dirhist_9='/mnt/hdd/Documents/Winter Code Camp/assignment3/solutions'
 let g:netrw_dirhist_8='/home/juggy1233/.cache'
 let g:netrw_dirhist_7='/etc/modprobe.d'
 let g:netrw_dirhist_6='/home/juggy1233'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_4='/mnt/hdd/Documents/School/Sem 3/COMP 2560 - System Progra
 let g:netrw_dirhist_3='/home/juggy1233/.purple'
 let g:netrw_dirhist_2='/home/juggy1233/.purple/smileys'
 let g:netrw_dirhist_1='/'
-let g:netrw_dirhist_0='/mnt/hdd/Documents/resume/Resume - Jagraj Aulakh/cv'
-let g:netrw_dirhist_9='/home/juggy1233/.config/glava/bars'

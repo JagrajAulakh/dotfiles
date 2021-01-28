@@ -28,11 +28,11 @@
 /* #define COLOR (#1c1c1c * GRADIENT) */
 /* #define COLOR (#FA947E * GRADIENT) */
 /* #define COLOR (#C79E6D * GRADIENT) */
-/* #define COLOR (#FFD86D * GRADIENT) */
+#define COLOR (#FFD86D * GRADIENT)
 /* #define COLOR (#FFD7B6 * GRADIENT) */
 /* #define COLOR (#021943 * GRADIENT) */
 /* #define COLOR (#8C959A * GRADIENT) */
-#define COLOR (#B5EDFC * GRADIENT)
+/* #define COLOR (#B5EDFC * GRADIENT) */
 
 /* Direction that the bars are facing, 0 for inward, 1 for outward */
 #define DIRECTION 1

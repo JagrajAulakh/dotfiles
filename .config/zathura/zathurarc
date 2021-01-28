@@ -5,6 +5,9 @@ set show-scrollbars
 set scrollbar-fg "#dddddd"
 set scrollbar-bg "#000000"
 
+set recolor-lightcolor "#0e0e0e"
+set recolor-darkcolor "#dfdfdf"
+
 map = zoom in
 map J scroll half-down
 map K scroll half-up

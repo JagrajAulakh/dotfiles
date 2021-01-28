@@ -5,7 +5,8 @@
 #define BACKGROUND     #1c1c1c
 #define BACKGROUND_ALT #A01C1C1C
 
-#define BORDER #C3810D
+/* #define BORDER #C3810D */
+#define BORDER #bfbfbf
 
 #define COLOR0   #8C959A
 #define COLOR100 #A08C959A

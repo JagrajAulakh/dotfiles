@@ -64,14 +64,13 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-tray
 exec --no-startup-id xbanish
 exec --no-startup-id clementine
-exec --no-startup-id pulseeffects
 exec_always --no-startup-id ~/scripts/touchpad.sh
 
 # bindsym $mod+Shift+u exec ~/scripts/shutdown.sh
 # bindsym $mod+Shift+i exec ~/scripts/logout.sh
 
 bindsym F10 exec ffplay -window_title Webcam -f v4l2 -fflags nobuffer -flags low_delay -video_size 720x1280 -framerate 1 -i /dev/video0
-bindsym Control+XF86HomePage exec cat ~/macros/rightmousespam.macro | xmacroplay
+bindsym XF86HomePage exec cat ~/macros/rightmousespam.macro | xmacroplay
 bindsym $mod+Shift+m exec ~/scripts/macros.sh
 bindsym $mod+Shift+u exec ~/scripts/powermenu.sh
 bindsym $mod+g exec optimus-manager --no-confirm --switch $(~/scripts/prompt.sh "GPU Mode:" 'nvidia\nintel\nhybrid')
@@ -90,6 +89,8 @@ bindsym $mod+e exec thunar
 bindsym Control+Mod1+m exec clementine
 bindsym Control+Mod1+p exec gpodder
 bindsym Control+Mod1+g exec gimp
+bindsym Control+Mod1+r exec pgrep -l redshift && pkill -USR1 '^redshift$' || redshift-gtk
+
 bindsym $mod+r exec alacritty -e ranger
 bindsym $mod+b exec alacritty -e watch -tn 1 acpi
 bindsym $mod+p exec alacritty -t "Python Instance" -e python3

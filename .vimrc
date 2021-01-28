@@ -28,9 +28,14 @@ set mouse=a
 set cmdheight=1
 set updatetime=300
 set noshowmode
+
+set termguicolors
+set nospell spelllang=en_ca
+
 let mapleader=' '
 
 nmap <Leader>v :source ~/.vimrc<CR>
+nmap <Leader>s :set spell!<CR>
 nmap j gj
 nmap k gk
 nmap <silent> <Leader>h :wincmd h<CR>
@@ -42,9 +47,11 @@ nmap zl z10l
 nmap Y y$
 nmap <Leader>y "+y
 nmap <Leader>Y "+y$
+vmap <Leader>y "+y
 nmap gn :tabnew<CR>
 nmap gx :close<CR>
 nmap ge :tabedit 
+vmap <Leader>q <ESC>`>a"<ESC>`<i"<ESC>
 
 " nmap <C-j> :tabn<CR>
 " nmap <C-k> :tabp<CR>
@@ -55,8 +62,8 @@ nmap <silent> <Leader>> :tabmove +1<CR>
 
 " Coc Bindings
 imap <C-j> <Plug>(coc-snippets-expand)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <Leader>cd <Plug>(coc-definition)
+nmap <silent> <Leader>cr <Plug>(coc-rename)
 nmap <silent> <C-l> :CocAction<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 inoremap <silent><expr> <c-@> coc#refresh()
@@ -69,7 +76,7 @@ nmap <Leader>f :ClangFormat<CR>
 " Open terminal in current file's directory
 nmap <silent> <expr> <Leader>t ":Dispatch! alacritty --working-directory='" . expand('%:p:h') . "'<CR>"
 nmap <silent> <Leader>o :Dispatch! ~/scripts/opener.sh "%"<CR>
-nmap <silent> <Leader>c :Dispatch! ~/scripts/compiler.sh "%"<CR>:Copen<CR>
+nmap <silent> <Leader>cc :Dispatch! ~/scripts/compiler.sh "%"<CR>:Copen<CR>
 nmap <silent> <Leader>C :Copen<CR>
 nmap <Leader>rp :ter python3 "%"<CR>
 nmap <Leader>rm :!$BROWSER "%" &<CR><CR><C-L>
@@ -80,9 +87,8 @@ nmap <C-p> :Files<CR>
 
 vmap J :m '>+1<CR>gv=gv
 vmap K :m '<-2<CR>gv=gv
-vmap <Leader>y "+y
-vmap <Leader>Y "+y$
 
+autocmd BufRead *.nasm exe "set ft=asm"
 autocmd BufWritePost *.tex exe "Dispatch! ~/scripts/compiler.sh '%'"
 autocmd BufWritePost ~/colors/* silent! execute "!xrdb ~/.Xresources" | redraw!
 autocmd BufWritePost *.Xresources silent! execute "!xrdb ~/.Xresources" | redraw!
@@ -98,8 +104,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rhysd/vim-clang-format'
 
-" Python autocompletion
-Plug 'davidhalter/jedi-vim'
+" COLORS
+Plug 'gryf/wombat256grf'
 
 " For automatically reloading buffer on file change
 Plug 'djoshea/vim-autoread'
@@ -109,6 +115,7 @@ call plug#end()
 
 colorscheme gruvbox
 let g:gruvbox_contrast_dark="soft"
+let g:gruvbox_guisp_fallback='bg'
 set bg=dark
 
 " vimwiki
