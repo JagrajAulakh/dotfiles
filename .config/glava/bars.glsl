@@ -1,4 +1,17 @@
 // vim: ft=c
+
+
+//===========================================
+//       _______ _
+//      (_______) |
+//       _   ___| | _____ _   _ _____
+//      | | (_  | |(____ | | | (____ |
+//      | |___) | |/ ___ |\ V // ___ |
+//       \_____/ \_)_____| \_/ \_____|
+//      
+//===========================================
+
+
 /* Center line thickness (pixels) */
 #define C_LINE 0
 /* Width (in pixels) of each bar */
@@ -28,11 +41,13 @@
 /* #define COLOR (#1c1c1c * GRADIENT) */
 /* #define COLOR (#FA947E * GRADIENT) */
 /* #define COLOR (#C79E6D * GRADIENT) */
-#define COLOR (#FFD86D * GRADIENT)
+/* #define COLOR (#FFD86D * GRADIENT) */
+#define COLOR (#FFD246 * GRADIENT)
 /* #define COLOR (#FFD7B6 * GRADIENT) */
 /* #define COLOR (#021943 * GRADIENT) */
 /* #define COLOR (#8C959A * GRADIENT) */
 /* #define COLOR (#B5EDFC * GRADIENT) */
+/* #define COLOR (#dfdfdf * GRADIENT) */
 
 /* Direction that the bars are facing, 0 for inward, 1 for outward */
 #define DIRECTION 1

@@ -1,20 +1,12 @@
-;==========================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/polybar/polybar
-;
-;   The README contains a lot of information
-;
-;==========================================================
+;===================================================
+;       ______      _       _
+;      (_____ \    | |     | |
+;       _____) )__ | |_   _| |__  _____  ____
+;      |  ____/ _ \| | | | |  _ \(____ |/ ___)
+;      | |   | |_| | | |_| | |_) ) ___ | |
+;      |_|    \___/ \_)__  |____/\_____|_|
+;                    (____/
+;===================================================
 
 [colors]
 background = ${xrdb:polybar.background:#222}
@@ -22,6 +14,7 @@ background = ${xrdb:polybar.background:#222}
 background-alt = ${xrdb:polybar.color4:#222}
 foreground = ${xrdb:polybar.foreground:#ffffff}
 foreground-alt = ${xrdb:polybar.foreground_alt:#808080}
+workspace_highlight = ${xrdb:polybar.workspace_highlight:#ff0000}
 primary = #F7CB98
 alert = #bd2c40
 
@@ -42,7 +35,7 @@ col5a = ${xrdb:polybar.color105:#a0FFA22E}
 [bar/top]
 monitor = ${env:MONITOR:}
 width = 1920
-height = 27
+height = 30
 offset-x = 0
 offset-y = 0
 radius = 0
@@ -55,11 +48,11 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
-border-color = #00000000
+border-size = 0
+border-color = ${colors.col4a}
 
 padding-left = 0
-padding-right = 2
+padding-right = 1
 
 module-margin-left = 0
 module-margin-right = 0
@@ -73,11 +66,11 @@ font-2 = Noto Color Emoji:scale=9;1
 
 modules-left = i3 bspwm dwm xwindow
 modules-center = 
-; modules-right = music pulseaudio weather custombrightness battery wlan date
-modules-right = music pulseaudio custombrightness battery date
+modules-right = pulseaudio music custombrightness battery date
 
 tray-position = right
-tray-padding = 5
+tray-background=${colors.background_alt}
+tray-padding = 2
 tray-offset-x = 0
 tray-offset-y = 0
 
@@ -86,8 +79,8 @@ wm-restack = bspwm
 
 override-redirect = false
 
-scroll-up = bspwm-desknext
-scroll-down = bspwm-deskprev
+scroll-up = i3wm-wsprev
+scroll-down = i3wm-wsnext
 
 cursor-click = pointer
 cursor-scroll = cursor
@@ -269,7 +262,7 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
 label-focused-foreground = ${self.label-mode-foreground}
-label-focused-background = ${colors.background-alt}
+label-focused-background = ${colors.workspace_highlight}
 ; label-focused-underline= ${colors.col0}
 label-focused-padding = 1
 
@@ -304,12 +297,14 @@ tail=true
 
 label = %output:0:30:...%
 format = <label>
-format-foreground = ${colors.col1}
-format-underline = ${colors.col1}
+format-background = ${colors.col3a}
+format-foreground = ${colors.foreground}
+; format-underline = ${colors.foreground}
 click-left = playerctl -p clementine play-pause &
 
 [module/pulseaudio]
 type = internal/pulseaudio
+; sink = alsa_output.platform-snd_aloop.0.pro-output-0
 
 format-volume = <label-volume> <bar-volume>
 label-volume = " %percentage%%"
@@ -350,7 +345,7 @@ interval = 10
 format-background = ${colors.col3a}
 format-foreground = ${colors.foreground}
 
-click-left = google-chrome-stable "https://weather.gc.ca/city/pages/on-94_metric_e.html" &
+click-left = brave "https://weather.gc.ca/city/pages/on-94_metric_e.html" &
 
 [module/pacman]
 type = custom/script
@@ -370,7 +365,7 @@ tail = true
 
 label = %output%
 format =  <label>%
-format-foreground = ${root.foreground}
+format-foreground = ${colors.foreground}
 ; format-underline = ${colors.col3}
 format-background = ${colors.col2a}
 scroll-up = light -A 5
@@ -453,7 +448,6 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 ; format-underline = ${colors.col0}
 format-background = ${colors.col0a}
-; click-left = google-calendar-dark &
 click-left = brave calendar.google.com
 
 [module/xkeyboard]

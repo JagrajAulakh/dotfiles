@@ -1,3 +1,13 @@
+//=================================
+//       ______         ___ _
+//      (_____ \       / __|_)
+//       _____) )___ _| |__ _
+//      |  __  // _ (_   __) |
+//      | |  \ \ |_| || |  | |
+//      |_|   |_\___/ |_|  |_|
+// 
+//=================================
+
 configuration {
 /*	monitor: "primary";*/
 /*	modi: "window,ssh,drun";*/
@@ -144,4 +154,4 @@ configuration {
 /*/*	me-accept-entry: "MouseDPrimary";*/*/
 /*/*	me-accept-custom: "Control+MouseDPrimary";*/*/
 }
-/* @import "/usr/share/rofi/themes/gruvbox-dark-soft.rasi" */
+@import "/home/juggy1233/.config/rofi/themes/gruvbox/gruvbox-dark-soft.rasi"

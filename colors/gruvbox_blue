@@ -1,0 +1,18 @@
+// vim:ft=c
+
+// DARK //
+#define FOREGROUND     #E9D9B0
+#define FOREGROUND_ALT #928374
+#define BACKGROUND     #32302F
+#define BACKGROUND_ALT #A0222222
+
+#define COLOR0   #458588
+#define COLOR1   #317275
+#define COLOR2   #1B5F62
+#define COLOR3   #004D50
+#define COLOR4   #003C3F
+#define COLOR100 #A0458588
+#define COLOR101 #A0317275
+#define COLOR102 #A01B5F62
+#define COLOR103 #A0004D50
+#define COLOR104 #A0003C3F

@@ -1,16 +1,18 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+#==============================================
+#     ______             _
+#    (____  \           | |
+#     ____)  )_____  ___| |__   ____ ____
+#    |  __  ((____ |/___)  _ \ / ___) ___)
+#    | |__)  ) ___ |___ | | | | |  ( (___
+#    |______/\_____(___/|_| |_|_|   \____)
+#    
+#==============================================
 
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
       *) return;;
 esac
-
-PATH=$PATH:/home/juggy1233/scripts
-export PATH
-export EDITOR=vim
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -67,10 +69,10 @@ if [ "$color_prompt" = yes ]; then
     # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
 
 	# BLUE
-	# PS1='${debian_chroot:+($debian_chroot)}\[\033[01;38;5;39m\]\u\[\033[00m\]@\[\033[01;38;5;45m\]\h\[\033[00m\]:\[\033[38;5;15m\]\w\n\$ \[\033[00m\]'
+	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;38;5;39m\]\u\[\033[00m\]@\[\033[01;38;5;45m\]\h\[\033[00m\]:\[\033[38;5;15m\]\w\n\$ \[\033[00m\]'
 
 	# YELLOW
-	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;38;5;178m\]\u\[\033[00m\]@\[\033[01;38;5;220m\]\h\[\033[00m\]:\[\033[38;5;15m\]\w\n\$ \[\033[00m\]'
+	# PS1='${debian_chroot:+($debian_chroot)}\[\033[01;38;5;178m\]\u\[\033[00m\]@\[\033[01;38;5;220m\]\h\[\033[00m\]:\[\033[38;5;15m\]\w\n\$ \[\033[00m\]'
 
 	# PURPLE
 	# PS1='${debian_chroot:+($debian_chroot)}\[\033[01;38;5;175m\]\u\[\033[00m\]@\[\033[01;38;5;133m\]\h\[\033[00m\]:\[\033[38;5;15m\]\w\n\$ \[\033[00m\]'
@@ -104,24 +106,14 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-source ~/.alias
-# source ~/.bash_profile
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.alias ]; then
+    . ~/.alias
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -156,18 +148,10 @@ runJava() {
 	javac $1 && java ${1%.*}
 }
 
-# xset b off
-# xset b 0 0 0
 gsettings set org.gnome.desktop.sound event-sounds false
-export TERMINAL=xterm-256color
-export BROWSER=brave
-export QT_QPA_PLATFORMTHEME=qt5ct
-
-# figlet -tf "ANSI Shadow" $(echo "$TERM") | lolcat
 
 # ### POWERLINE STUFF ###
 # powerline-daemon -q
 # POWERLINE_BASH_CONTINUATION=1
 # POWERLINE_BASH_SELECT=1
 # . /usr/share/powerline/bindings/bash/powerline.sh
-

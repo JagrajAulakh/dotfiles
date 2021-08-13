@@ -152,6 +152,8 @@ Plug 'morhetz/gruvbox'
 " Comment blocks of code
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
+" Git greatness
+Plug 'tpope/vim-fugitive'
 " i3wm syntax
 Plug 'mboughaba/i3config.vim'
 Plug 'ap/vim-css-color'
@@ -160,7 +162,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'dhruvasagar/vim-table-mode'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'rhysd/vim-clang-format'
+
+Plug 'mhinz/vim-signify'
 
 " COLORS
 Plug 'gryf/wombat256grf'
