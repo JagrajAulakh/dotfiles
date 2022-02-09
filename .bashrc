@@ -5,7 +5,7 @@
 #    |  __  ((____ |/___)  _ \ / ___) ___)
 #    | |__)  ) ___ |___ | | | | |  ( (___
 #    |______/\_____(___/|_| |_|_|   \____)
-#    
+#
 #==============================================
 
 # If not running interactively, don't do anything
@@ -62,26 +62,35 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+function bgcolor {
+    echo "\\[\\033[48;5;"$1"m\\]"
+}
+
+function fgcolor {
+    echo "\\[\\033[38;5;"$1"m\\]"
+}
+
+function resetcolor {
+    echo "\\[\\e[0m\\]"
+}
+
 if [ "$color_prompt" = yes ]; then
 #     # PS1='[\u@\h \W]\$ '
 
 	# GREEN
-    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
+	# PS1="$(fgcolor 70)\u$(resetcolor)@$(bgcolor 70)$(fgcolor 0)\h$(resetcolor)$(fgcolor 82):$(fgcolor 15)\w\n\$ $(resetcolor)"
 
 	# BLUE
-	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;38;5;39m\]\u\[\033[00m\]@\[\033[01;38;5;45m\]\h\[\033[00m\]:\[\033[38;5;15m\]\w\n\$ \[\033[00m\]'
+	PS1="$(fgcolor 39)\u$(resetcolor)@$(bgcolor 39)$(fgcolor 0)\h$(resetcolor):$(fgcolor 15)\w\n\$ $(resetcolor)"
 
 	# YELLOW
-	# PS1='${debian_chroot:+($debian_chroot)}\[\033[01;38;5;178m\]\u\[\033[00m\]@\[\033[01;38;5;220m\]\h\[\033[00m\]:\[\033[38;5;15m\]\w\n\$ \[\033[00m\]'
+	# PS1='\[\033[01;38;5;178m\]\u\[\033[00m\]@\[\033[01;38;5;220m\]\h\[\033[00m\]:\[\033[38;5;15m\]\w\n\$ \[\033[00m\]'
 
 	# PURPLE
 	# PS1='${debian_chroot:+($debian_chroot)}\[\033[01;38;5;175m\]\u\[\033[00m\]@\[\033[01;38;5;133m\]\h\[\033[00m\]:\[\033[38;5;15m\]\w\n\$ \[\033[00m\]'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-
-
-
 
 unset color_prompt force_color_prompt
 
@@ -98,8 +107,6 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -112,9 +119,7 @@ fi
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.alias ]; then
-    . ~/.alias
-fi
+[[ -f ~/.alias ]] && . ~/.alias
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -155,3 +160,4 @@ gsettings set org.gnome.desktop.sound event-sounds false
 # POWERLINE_BASH_CONTINUATION=1
 # POWERLINE_BASH_SELECT=1
 # . /usr/share/powerline/bindings/bash/powerline.sh
+

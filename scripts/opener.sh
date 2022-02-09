@@ -9,7 +9,7 @@ EXT="${FILE##*.}"        # Only extension
 case "$EXT" in
 	tex) zathura "$BASE".pdf ;;
 	md)
-		(echo $DIR | grep -i -q "pandoc") && zathura "$BASE".pdf || $BROWSER "$FILE"
+		(echo $DIR | grep -i -q "pandoc") && zathura "$BASE".pdf || exo-open --launch WebBrowser "$FILE"
 		;;
 	html) $BROWSER "$FILE" ;;
 esac

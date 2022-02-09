@@ -1,16 +1,42 @@
-set so=15
-set number
+set nowrap
+
+" For searching
+set ignorecase
+set smartcase
+
 set incsearch
-set smartcase ignorecase
+set nohlsearch
+set number relativenumber
+
+set so=15
+set wildmenu
+set splitright
+set splitbelow
 
 let mapleader=' '
 
-nmap Y y$
-nmap <leader>y "+y
-nmap <leader>Y "+y$
-vmap <Leader>y "+y
-vmap <Leader>Y "+y$
-
+nmap <Leader>v :source ~/.ideavimrc<CR>
+nmap j gj
+nmap k gk
 nmap zh z10h
 nmap zl z10l
+" Make Y behave like it should
+nmap Y y$
+
+"--------------------------
+" System clipboard bindings
+"--------------------------
+nmap <Leader>y "+y
+nmap <Leader>Y "+y$
+vmap <Leader>y "+y
+nmap <Leader>p "+p
+vmap <Leader>p "+p
+
+"--------------------
+" Tab/Window bindings
+"--------------------
+nmap gn :tabnew<CR>
+nmap gx :close<CR>
+nmap ge :tabedit 
+nmap <C-n> :tabnew<CR>
 

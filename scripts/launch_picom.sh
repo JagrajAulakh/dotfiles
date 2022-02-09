@@ -1,4 +1,4 @@
 #!/bin/bash
 
-killall picom; sleep 1s; picom --experimental-backends -b
+killall picom; sleep 1s; picom --experimental-backends -b -G
 

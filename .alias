@@ -1,38 +1,21 @@
-alias la='ls --group-directories-first -lah --color=auto'
-alias cls='tput clear'
-alias l='ls -CF'
-alias src='source ~/.bash_profile; source ~/.bashrc'
-alias here='thunar . 2> /dev/null &'
+#
+# ~/.alias
+#
 
-alias cdw='cd /mnt/binbows/Users/juggy1233'
-
+alias vim='nvim'
 alias v='vim'
-alias vv='vim ~/.vimrc'
-alias va='vim ~/.alias; src'
-alias val='vim ~/.config/alacritty/alacritty.yml'
+alias dotfiles='git --git-dir $HOME/dotfiles.git --work-tree $HOME'
+
+alias src='source ~/.alias; source ~/.bashrc'
+alias cls='clear'
+alias la='ls -lah --group-directories-first'
+
+alias cdw='cd ~/Documents/code/web/windsorcodecamp.com/'
+
+alias va='vim ~/.alias'
 alias vb='vim ~/.bashrc'
 alias vbp='vim ~/.bash_profile'
-alias vcc='vim ~/.config/conky/conky.conf'
-alias vcm='vim ~/.config/conky/music.conf'
-alias vct='vim ~/.config/conky/time.conf'
-alias vd='vim ~/.config/dunst/dunstrc'
-alias vi3='vim ~/.config/i3/config'
-alias vm='vim ~/.config/MangoHud/MangoHud.conf'
-alias vp='vim ~/.config/polybar/config'
-alias vpi='vim ~/.config/picom/picom.conf'
-alias vr='vim ~/.config/ranger/rc.conf'
-alias vro='vim ~/.config/rofi/config.rasi'
-alias vg='cd ~/.config/glava; vim bars.glsl'
-alias vq='cd ~/.config/qtile/; vim config.py'
-alias vw='vim ~/Documents/frame.txt'
-alias vx='vim ~/.Xresources; xrdb ~/.Xresources'
-alias vz='vim ~/.config/zathura/zathurarc'
+alias vv='vim ~/.vimrc'
 
-alias homeserver='ssh homeserver'
-alias uwu='ssh uwindsor'
-
-alias mc='java -jar /home/juggy1233/Documents/minecraft/TLauncher.jar'
-alias mcserver='cd ~/"Documents/minecraft/servers/$(~/scripts/prompt.sh "Server:" "$(ls -w 1 ~/Documents/minecraft/servers)")" && ./run.sh'
-
-alias dotfiles='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
-alias diff='diff --color=always -y'
+alias here='thunar 2>&1 &'
+alias sv='. env/bin/activate'

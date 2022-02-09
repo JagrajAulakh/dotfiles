@@ -42,9 +42,12 @@ set mouse=a
 set cmdheight=1
 set updatetime=300
 set noshowmode
+set colorcolumn=80 textwidth=80
 
 set termguicolors
 set nospell spelllang=en_ca
+" Opens new buffers in new tab, unless already open. Then it switches to it
+set switchbuf+=usetab,newtab
 
 let mapleader=' '
 
@@ -69,12 +72,10 @@ vmap <Leader>p "+p
 "--------------------
 " Tab/Window bindings
 "--------------------
-nmap gn :tabnew<CR>
-nmap gx :close<CR>
 nmap ge :tabedit 
 nmap <C-n> :tabnew<CR>
 
-nmap <C-E> :Lexplore<CR>
+nmap <C-E> :RnvimrToggle<CR>
 nmap <Leader>d :DiffSaved<CR>
 nmap <silent> <Leader>< :tabmove -1<CR>
 nmap <silent> <Leader>> :tabmove +1<CR>
@@ -121,7 +122,7 @@ endfunction
 
 " Compilation / run
 " Open terminal in current file's directory
-nmap <silent> <expr> <Leader>t ":Dispatch! alacritty --working-directory='" . expand('%:p:h') . "'<CR>"
+nmap <silent> <expr> <Leader>t ":Dispatch! exo-open --launch TerminalEmulator --working-directory='" . expand('%:p:h') . "'<CR>"
 nmap <silent> <Leader>o :Dispatch ~/scripts/opener.sh "%"<CR>
 nmap <silent> <Leader>cc :Dispatch ~/scripts/compiler.sh "%"<CR>:Copen<CR>
 nmap <Leader>w :Dispatch! ~/scripts/website_opener.sh %<CR>
@@ -129,6 +130,10 @@ nmap <silent> <Leader>C :Copen<CR>
 
 """ FZF Bindings
 nmap <C-p> :Files<CR>
+nmap <M-q> :copen<CR>
+nmap <M-k> :cprev<CR>
+nmap <M-j> :cnext<CR>
+nmap <F3> :Rg 
 
 vmap J :m '>+1<CR>gv=gv
 vmap K :m '<-2<CR>gv=gv
@@ -147,32 +152,51 @@ augroup auto_save_things
 	autocmd BufWritePost *.Xresources silent! execute "!xrdb ~/.Xresources" | redraw!
 augroup END
 
+"""""""""
+" PLUGINS
+"""""""""
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
+
+" ranger floating window integration
+Plug 'kevinhwang91/rnvimr'
+
 " Comment blocks of code
 Plug 'tpope/vim-commentary'
+
 Plug 'tpope/vim-dispatch'
 " Git greatness
 Plug 'tpope/vim-fugitive'
-" i3wm syntax
-Plug 'mboughaba/i3config.vim'
-Plug 'ap/vim-css-color'
-Plug 'junegunn/fzf.vim'
 
-Plug 'dhruvasagar/vim-table-mode'
+Plug 'junegunn/fzf.vim'
+Plug 'jremmen/vim-ripgrep'
+
+" Plug 'dhruvasagar/vim-table-mode'
+Plug 'mattn/emmet-vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-snippets'
 
 Plug 'mhinz/vim-signify'
 
 " COLORS
 Plug 'gryf/wombat256grf'
+Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
 
 " For automatically reloading buffer on file change
 Plug 'djoshea/vim-autoread'
 
-" syntax for GLSL
-Plug 'tikhomirov/vim-glsl'
+" SYNTAX
+Plug 'tikhomirov/vim-glsl'       " GLSL
+Plug 'mboughaba/i3config.vim'    " i3wm
+Plug 'yuezk/vim-js'              " JavaScript
+Plug 'maxmellon/vim-jsx-pretty'  " JSX (JavaScript XML)
+Plug 'ap/vim-css-color'
+
+"PRETTIER
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
 call plug#end()
 
@@ -193,6 +217,11 @@ function! s:DiffWithSaved()
 	exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+
+" PRETTIER SETTINGS
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#config#use_tabs = 'false'
 
 hi User1 guifg=black guibg=gray    ctermfg=black ctermbg=gray
 hi User2 guifg=black guibg=blue    ctermfg=black ctermbg=blue
@@ -228,7 +257,7 @@ set statusline+=\ %6*\ [%p%%]
 set statusline+=\ "
 
 " GUI options
-set guifont=Liberation\ Mono:h18
+set guifont=Ubuntu\ Mono\ 18
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver25-iCursor
 
@@ -243,7 +272,4 @@ let g:neovide_cursor_vfx_particle_density=7
 let g:neovide_cursor_vfx_opacity=200
 let g:neovide_cursor_vfx_particle_lifetime=10
 let g:neovide_cursor_vfx_particle_curl=1.0
-
-
-
 
