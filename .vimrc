@@ -75,8 +75,10 @@ vmap <Leader>p "+p
 nmap ge :tabedit 
 nmap <C-n> :tabnew<CR>
 
-nmap <C-E> :RnvimrToggle<CR>
-nmap <Leader>d :DiffSaved<CR>
+nmap <C-e> :RnvimrToggle<CR>
+tmap <C-e> <C-\><C-n>:RnvimrToggle<CR>
+tmap <M-r> <C-\><C-n>:RnvimrResize<CR>
+nmap <Leader>dd :DiffSaved<CR>
 nmap <silent> <Leader>< :tabmove -1<CR>
 nmap <silent> <Leader>> :tabmove +1<CR>
 nmap <silent> <leader>fw :Windows<CR>
@@ -129,7 +131,9 @@ nmap <Leader>w :Dispatch! ~/scripts/website_opener.sh %<CR>
 nmap <silent> <Leader>C :Copen<CR>
 
 """ FZF Bindings
-nmap <C-p> :Files<CR>
+" nmap <C-p> :Files<CR>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nmap <M-q> :copen<CR>
 nmap <M-k> :cprev<CR>
 nmap <M-j> :cnext<CR>
@@ -150,6 +154,11 @@ augroup auto_save_things
 	autocmd BufWritePost *.tex exe "Dispatch! ~/scripts/compiler.sh '%'"
 	autocmd BufWritePost ~/colors/* silent! execute "!xrdb ~/.Xresources" | redraw!
 	autocmd BufWritePost *.Xresources silent! execute "!xrdb ~/.Xresources" | redraw!
+augroup END
+
+augroup troll_zain_lmao
+	autocmd!
+	autocmd BufReadPost COMMIT_EDITMSG setlocal colorcolumn=0 textwidth=0 | nmap <silent> <leader>z mzA @zainaraza43`z
 augroup END
 
 """""""""
@@ -195,8 +204,8 @@ Plug 'ap/vim-css-color'
 
 "PRETTIER
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install --frozen-lockfile --production',
-  \ 'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+			\ 'do': 'yarn install --frozen-lockfile --production',
+			\ 'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
 call plug#end()
 
@@ -236,16 +245,16 @@ au InsertEnter * hi User1 guibg=#98971a ctermbg=green
 " always displays statusline
 set laststatus=2
 let g:currentmode={
-    \ 'n'  : 'NORMAL ',
-    \ 'v'  : 'VISUAL ',
-    \ 'V'  : 'V·Line ',
-    \ '' : 'V·Block ',
-    \ 'i'  : 'INSERT ',
-    \ 'R'  : 'R ',
-    \ 'Rv' : 'V·Replace ',
-    \ 'c'  : 'Command ',
-    \ 't'  : 'TESTING ',
-    \}
+			\ 'n'  : 'NORMAL ',
+			\ 'v'  : 'VISUAL ',
+			\ 'V'  : 'V·Line ',
+			\ '' : 'V·Block ',
+			\ 'i'  : 'INSERT ',
+			\ 'R'  : 'R ',
+			\ 'Rv' : 'V·Replace ',
+			\ 'c'  : 'Command ',
+			\ 't'  : 'TESTING ',
+			\}
 set statusline=
 set statusline+=%1*\ %1*%{toupper(g:currentmode[mode()])}
 set statusline+=%6*\ %f

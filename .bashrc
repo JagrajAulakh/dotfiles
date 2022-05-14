@@ -23,7 +23,7 @@ shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
-HISTFILESIZE=2000
+HISTFILESIZE=5000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -61,6 +61,9 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
+
+[[ -f ~/.env ]] && . ~/.env
+
 
 function bgcolor {
     echo "\\[\\033[48;5;"$1"m\\]"

@@ -5,8 +5,9 @@
 alias vim='nvim'
 alias v='vim'
 alias dotfiles='git --git-dir $HOME/dotfiles.git --work-tree $HOME'
+alias code='cd ~/Documents/code/'
 
-alias src='source ~/.alias; source ~/.bashrc'
+alias src='source ~/.alias; source ~/.bashrc; source ~/.bash_profile'
 alias cls='clear'
 alias la='ls -lah --group-directories-first'
 
@@ -15,7 +16,9 @@ alias cdw='cd ~/Documents/code/web/windsorcodecamp.com/'
 alias va='vim ~/.alias'
 alias vb='vim ~/.bashrc'
 alias vbp='vim ~/.bash_profile'
-alias vv='vim ~/.vimrc'
+alias vmw='vim ~/.config/MangoHud/Warframe.conf'
+alias vr='vim ~/.config/ranger/'
+alias vv='pushd ~/.config/nvim/; vim init.lua; popd'
 
 alias here='thunar 2>&1 &'
 alias sv='. env/bin/activate'
