@@ -72,5 +72,4 @@ set statusline+=\ %6*\ [%p%%]
 set statusline+=\ "
 ]])
 
-vim.opt.completeopt={"menu", "menuone"} -- setting vim values
 

@@ -7,18 +7,6 @@ null_ls.setup({
 		null_ls.builtins.formatting.black,
 		-- null_ls.builtins.completion.spell,
 	},
-	on_attach = function(client, bufnr)
-		if client.resolved_capabilities.document_formatting then
-			vim.cmd("nnoremap <Leader>l :lua vim.lsp.buf.formatting()<CR>")
-			-- format on save
-			-- vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()")
-
-		end
-
-		if client.resolved_capabilities.document_range_formatting then
-			vim.cmd("xnoremap <Leader>l :lua vim.lsp.buf.range_formatting({})<CR>")
-		end
-	end,
 })
 
 prettier.setup({

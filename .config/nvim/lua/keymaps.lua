@@ -57,3 +57,5 @@ vim.api.nvim_set_keymap('n', '<M-h>', '<cmd>lua require("luasnip").jump(-1)<CR>'
 vim.api.nvim_set_keymap('i', '<M-l>', '<cmd>lua require("luasnip").jump(1)<CR>', {noremap=true})
 vim.api.nvim_set_keymap('i', '<M-h>', '<cmd>lua require("luasnip").jump(-1)<CR>', {noremap=true})
 
+vim.cmd("nnoremap <Leader>l :lua vim.lsp.buf.formatting()<CR>")
+vim.cmd("xnoremap <Leader>l :lua vim.lsp.buf.range_formatting({})<CR>")

@@ -40,5 +40,3 @@ vim.opt.termguicolors = true
 vim.opt.spell = false
 vim.opt.spelllang = 'en_ca'
 
-vim.opt.completeopt="menu,menuone,noselect"
-

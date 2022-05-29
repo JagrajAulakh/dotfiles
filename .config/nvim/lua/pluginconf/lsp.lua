@@ -53,3 +53,8 @@ lsp.sumneko_lua.setup{
 	}
 }
 
+lsp.clangd.setup{
+	capabilities = capabilities,
+	on_attach = on_attach
+}
+
