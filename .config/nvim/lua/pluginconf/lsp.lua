@@ -1,6 +1,6 @@
 -- Native LSP Setup
 local on_attach = function(client, bufnr)
-	local opts = { noremap=true }
+	local opts = { noremap = true }
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
@@ -16,15 +16,20 @@ end
 local lsp = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local servers = {'pyright', 'vimls'}
+-- List of language servers to apply the default configuration to
+local servers = { 'pyright', 'vimls', 'clangd', 'jdtls' }
 for _, server in pairs(servers) do
-	lsp[server].setup{
+	lsp[server].setup {
 		capabilities = capabilities,
 		on_attach = on_attach,
 	}
 end
 
-lsp.tsserver.setup{
+-------------------------------------------------
+-- SPECIALIZED CONFIGURATION FOR LANGUAGE SERVERS
+-------------------------------------------------
+
+lsp.tsserver.setup {
 	capabilities = capabilities,
 	on_attach = function(client, bufnr)
 		client.resolved_capabilities.document_formatting = false
@@ -33,28 +38,20 @@ lsp.tsserver.setup{
 	end,
 }
 
-lsp.jdtls.setup{
-	capabilities = capabilities,
-	on_attach = on_attach,
-	-- root_dir = function(fname)
-	-- 	return lsp.util.find_git_ancestor(fname) .. "/src" or vim.loop.os_homedir()
-	-- end;
-}
-
-lsp.sumneko_lua.setup{
+lsp.sumneko_lua.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
 		Lua = {
 			diagnostics = {
-				globals = {'vim'}
+				globals = { 'vim' }
 			}
 		}
 	}
 }
 
-lsp.clangd.setup{
+lsp.html.setup {
 	capabilities = capabilities,
-	on_attach = on_attach
+	on_attach = on_attach,
+	filetypes = { 'html', 'xml', 'xhtml' }
 }
-

@@ -12,6 +12,7 @@ alias cls='clear'
 alias la='ls -lah --group-directories-first'
 
 alias cdw='cd ~/Documents/code/web/windsorcodecamp.com/'
+alias cds='cd ~/Documents/School/Sem\ 6'
 
 alias va='vim ~/.alias'
 alias vb='vim ~/.bashrc'

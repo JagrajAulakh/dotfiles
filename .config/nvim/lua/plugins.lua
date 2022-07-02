@@ -59,9 +59,8 @@ Plug 'ap/vim-css-color'
 -- *Uses null-ls plugin
 Plug 'MunifTanjim/prettier.nvim'
 
--- Plug 'prettier/vim-prettier', {
--- 			\ 'do': 'yarn install --frozen-lockfile --production',
--- 			\ 'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+-- Markdown stuff
+Plug 'ixru/nvim-markdown'
 
 vim.call('plug#end')
 
