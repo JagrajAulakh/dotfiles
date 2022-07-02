@@ -435,15 +435,5 @@
 #    appname = "some_volume_notifiers"
 #    set_stack_tag = "volume"
 #
-# [glava]
-# 	desktop_entry = clementine
-# 	script = ~/scripts/dunst-actions.sh
-
-########################## TESTING
-# [clementine]
-# 	desktop_entry = clementine
-# 	background = "#ff0000"
-
-
 
 # vim: ft=cfg
