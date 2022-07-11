@@ -3,7 +3,7 @@
 	name = Jagraj Aulakh
 
 [core]
-	editor = vim
+	commentChar = ";"
 [init]
 	defaultBranch = master
 
@@ -13,5 +13,17 @@
 	kermit = commit
 [pull]
 	rebase = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[diff]
+	tool = nvimdiff
+[commit]
+	gpgsign = true
+[merge]
+	tool = nvimdiff
+	conflictstyle = diff3
 [fetch]
 	prune = true
