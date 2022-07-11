@@ -15,7 +15,7 @@ Plug 'tpope/vim-dispatch'
 
 -- Git greatness
 Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'   -- Show's git additions/modifications/deletions in number column
+Plug 'mhinz/vim-signify' -- Show's git additions/modifications/deletions in number column
 
 Plug 'jremmen/vim-ripgrep'
 

@@ -14,7 +14,7 @@ alias la='ls -lah --group-directories-first'
 alias cdw='cd ~/Documents/code/web/windsorcodecamp.com/'
 alias cds='cd ~/Documents/School/Sem\ 6'
 
-alias va='vim ~/.alias'
+alias va='vim ~/.alias; src'
 alias vb='vim ~/.bashrc'
 alias vbp='vim ~/.bash_profile'
 alias vmw='vim ~/.config/MangoHud/Warframe.conf'

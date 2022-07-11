@@ -1,8 +1,8 @@
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
-local cmp = require'cmp'
+local cmp = require 'cmp'
 
-local select_opts = {behavior = cmp.SelectBehavior.Select}
+local select_opts = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup({
 	snippet = {
@@ -27,16 +27,16 @@ cmp.setup({
 		['<C-j>'] = cmp.mapping.confirm({ select = true })
 	},
 	sources = cmp.config.sources({
-		{name = 'path'},
-		{name = 'nvim_lsp', keyword_length = 1},
-		{name = 'buffer', keyword_length = 3},
-		{name = 'luasnip', keyword_length = 1},
+		{ name = 'path' },
+		{ name = 'nvim_lsp', keyword_length = 1 },
+		{ name = 'buffer', keyword_length = 3 },
+		{ name = 'luasnip', keyword_length = 1 },
 	}),
 	window = {
 		documentation = cmp.config.window.bordered()
 	},
 	formatting = {
-		fields = {'menu', 'abbr', 'kind'},
+		fields = { 'menu', 'abbr', 'kind' },
 		format = function(entry, item)
 			local menu_icon = {
 				nvim_lsp = 'λ',
@@ -71,10 +71,7 @@ cmp.setup.cmdline('/', {
 cmp.setup.cmdline(':', {
 	sources = cmp.config.sources({
 		{ name = 'path' }
-	},
-	{
+	}, {
 		{ name = 'cmdline' }
-    })
+	})
 })
-
-

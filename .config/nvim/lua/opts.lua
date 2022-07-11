@@ -1,4 +1,4 @@
-local HOME=os.getenv("HOME")
+local HOME = os.getenv("HOME")
 
 vim.opt.errorbells = false
 -- " Highlights current line
@@ -11,7 +11,7 @@ vim.opt.smartcase = true
 
 vim.opt.swapfile = false
 vim.opt.autoread = true
-vim.opt.undodir = HOME.."/.vim/undodir"
+vim.opt.undodir = HOME .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.exrc = true
 vim.opt.secure = true
@@ -39,4 +39,3 @@ vim.opt.textwidth = 88
 vim.opt.termguicolors = true
 vim.opt.spell = false
 vim.opt.spelllang = 'en_ca'
-

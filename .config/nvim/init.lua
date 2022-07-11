@@ -15,9 +15,9 @@ require('autocmd')
 require('plugins')
 
 vim.cmd('colorscheme gruvbox')
-vim.g.gruvbox_contrast_dark="soft"
-vim.g.gruvbox_guisp_fallback='bg'
-vim.opt.bg="dark"
+vim.g.gruvbox_contrast_dark = "soft"
+vim.g.gruvbox_guisp_fallback = 'bg'
+vim.opt.bg = "dark"
 
 vim.cmd([[ command! W execute("w") ]])
 vim.cmd([[ command! Q execute("q") ]])
@@ -71,5 +71,3 @@ set statusline+=\ %1*\ %v:%l\/%L
 set statusline+=\ %6*\ [%p%%]
 set statusline+=\ "
 ]])
-
-

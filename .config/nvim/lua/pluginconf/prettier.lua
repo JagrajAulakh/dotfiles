@@ -1,13 +1,4 @@
-local null_ls = require("null-ls")
 local prettier = require("prettier")
-
-null_ls.setup({
-	sources = {
-		null_ls.builtins.formatting.prettier,
-		null_ls.builtins.formatting.black,
-		-- null_ls.builtins.completion.spell,
-	},
-})
 
 prettier.setup({
 	bin = 'prettier', -- or `prettierd`
