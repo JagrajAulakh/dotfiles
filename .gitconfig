@@ -1,0 +1,17 @@
+[user]
+	email = aulakhjagraj@gmail.com
+	name = Jagraj Aulakh
+
+[core]
+	editor = vim
+[init]
+	defaultBranch = master
+
+[alias]
+	logg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	stat = status -s
+	kermit = commit
+[pull]
+	rebase = true
+[fetch]
+	prune = true
