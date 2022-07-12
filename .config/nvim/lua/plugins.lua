@@ -9,7 +9,7 @@ vim.call('plug#begin', '~/.vim/plugged')
 Plug 'kevinhwang91/rnvimr'
 
 -- Comment blocks of code
-Plug 'tpope/vim-commentary'
+Plug 'numToStr/Comment.nvim'
 
 Plug 'tpope/vim-dispatch'
 
@@ -74,3 +74,4 @@ require('pluginconf.cmp')
 require('pluginconf.luasnip')
 require('pluginconf.null-ls')
 require('pluginconf.prettier')
+require('pluginconf.comment')
