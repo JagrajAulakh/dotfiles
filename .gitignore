@@ -1,3 +1,9 @@
+*.mkv
+*.mp4
+*.ods
+*.pdf
+*.png
+*.txt
 .Heaven/
 .ICEauthority
 .Valley/
@@ -28,8 +34,6 @@
 .config/OpenRGB/
 .config/Postman/
 .config/QtProject.conf
-.config/ranger/bookmarks
-__pycache__/
 .config/Signal Beta/
 .config/Signal/
 .config/Thunar/
@@ -92,6 +96,7 @@ __pycache__/
 .config/pupgui/
 .config/qt5ct/
 .config/qt6ct/
+.config/ranger/bookmarks
 .config/redshift/
 .config/replay-sorcery.conf
 .config/retroarch/
@@ -119,6 +124,7 @@ __pycache__/
 .eclipse/
 .electron-gyp/
 .flake8
+.fltk/
 .gitkraken/
 .gnupg/
 .gradle/
@@ -155,6 +161,7 @@ __pycache__/
 .tlauncher/
 .vim/
 .viminfo
+.vnc/
 .w3m/
 .wget-hsts
 .wine/
@@ -178,6 +185,7 @@ Pictures/
 SoftMaker/
 VMs/
 Videos/
+__pycache__/
 dotfiles*/
 go/
 legion/
@@ -186,9 +194,3 @@ node_modules/
 package-lock.json
 package.json
 workspace/
-*.mkv
-*.mp4
-*.ods
-*.pdf
-*.png
-*.txt
