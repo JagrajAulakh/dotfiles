@@ -29,6 +29,7 @@
 .config/Postman/
 .config/QtProject.conf
 .config/ranger/bookmarks
+__pycache__/
 .config/Signal Beta/
 .config/Signal/
 .config/Thunar/
