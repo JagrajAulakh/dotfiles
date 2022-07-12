@@ -2,7 +2,7 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 local cmp = require 'cmp'
 
-local select_opts = { behavior = cmp.SelectBehavior.Select }
+local select_opts = { behavior = cmp.SelectBehavior.Insert }
 
 cmp.setup({
 	snippet = {
@@ -24,13 +24,17 @@ cmp.setup({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
 		}),
-		['<C-j>'] = cmp.mapping.confirm({ select = true })
+		['<C-j>'] = cmp.mapping.confirm({
+			behavior = cmp.ConfirmBehavior.Insert,
+			select = true
+		}),
 	},
 	sources = cmp.config.sources({
 		{ name = 'path' },
+		{ name = 'nvim_lua' },
 		{ name = 'nvim_lsp', keyword_length = 1 },
-		{ name = 'buffer', keyword_length = 3 },
 		{ name = 'luasnip', keyword_length = 1 },
+		{ name = 'buffer', keyword_length = 3 },
 	}),
 	window = {
 		documentation = cmp.config.window.bordered()
@@ -39,6 +43,7 @@ cmp.setup({
 		fields = { 'menu', 'abbr', 'kind' },
 		format = function(entry, item)
 			local menu_icon = {
+				nvim_lua = '',
 				nvim_lsp = 'λ',
 				luasnip = '⋗',
 				buffer = 'Ω',
