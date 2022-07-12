@@ -9,9 +9,9 @@
 --=======================================
 
 require('opts')
+require('plugins')
 require('keymaps')
 require('autocmd')
-require('plugins')
 
 vim.cmd('colorscheme gruvbox')
 vim.g.gruvbox_contrast_dark = "soft"

@@ -1,3 +1,5 @@
+local luasnip = require("luasnip")
+
 vim.g.mapleader = ' '
 
 local opts = { noremap = true }
@@ -48,14 +50,19 @@ vim.api.nvim_set_keymap('n', '<F3>', ':Rg ', opts)
 vim.api.nvim_set_keymap('n', '<M-q>', ':copen<CR>', opts)
 vim.api.nvim_set_keymap('n', '<M-k>', ':cprev<CR>', opts)
 vim.api.nvim_set_keymap('n', '<M-j>', ':cnext<CR>', opts)
-vim.api.nvim_set_keymap('v', 'J', ':m \'>+1<CR>gv=gv', opts)
-vim.api.nvim_set_keymap('v', 'K', ':m \'<-2<CR>gv=gv', opts)
 
+-- Luasnip Mappings
+vim.keymap.set({ "i", "s", "n" }, "<c-j>", function()
+	if luasnip.expand_or_jumpable() then
+		luasnip.expand_or_jump()
+	end
+end, { silent = true })
 
-vim.api.nvim_set_keymap('n', '<M-l>', '<cmd>lua require("luasnip").jump(1)<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<M-h>', '<cmd>lua require("luasnip").jump(-1)<CR>', { noremap = true })
-vim.api.nvim_set_keymap('i', '<M-l>', '<cmd>lua require("luasnip").jump(1)<CR>', { noremap = true })
-vim.api.nvim_set_keymap('i', '<M-h>', '<cmd>lua require("luasnip").jump(-1)<CR>', { noremap = true })
+vim.keymap.set({ "i", "s"}, "<c-k>", function()
+	if luasnip.jumpable(-1) then
+		luasnip.jump(-1)
+	end
+end, { silent = true })
 
 vim.cmd("nnoremap <Leader>l :lua vim.lsp.buf.formatting()<CR>")
 vim.cmd("xnoremap <Leader>l :lua vim.lsp.buf.range_formatting({})<CR>")
