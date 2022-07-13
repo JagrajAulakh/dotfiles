@@ -13,10 +13,10 @@ require('plugins')
 require('keymaps')
 require('autocmd')
 
-vim.cmd('colorscheme gruvbox')
 vim.g.gruvbox_contrast_dark = "soft"
-vim.g.gruvbox_guisp_fallback = 'bg'
-vim.opt.bg = "dark"
+vim.g.gruvbox_italic = 1
+vim.g.gruvbox_transparent_bg = 1
+vim.cmd('colorscheme gruvbox')
 
 vim.cmd([[ command! W execute("w") ]])
 vim.cmd([[ command! Q execute("q") ]])
@@ -66,23 +66,6 @@ let g:currentmode={
 	\ 's'  : 'SELECT',
 	\ 't'  : 'FINDER',
 	\}
-
-set statusline=
-set statusline+=%#NormalColor#%{(g:currentmode[mode()]=='NORMAL')?'\ \ NORMAL\ ':''}
-set statusline+=%#InsertColor#%{(g:currentmode[mode()]=='INSERT')?'\ \ INSERT\ ':''}
-set statusline+=%#ReplaceColor#%{(g:currentmode[mode()]=='R')?'\ \ REPLACE\ ':''}
-set statusline+=%#ReplaceColor#%{(g:currentmode[mode()]=='V·Replace')?'\ \ V-REPLACE\ ':''}
-set statusline+=%#VisualColor#%{(g:currentmode[mode()]=='VISUAL')?'\ \ VISUAL\ ':''}
-set statusline+=%#VisualColor#%{(g:currentmode[mode()]=='V·Line')?'\ \ V-LINE\ ':''}
-set statusline+=%#VisualColor#%{(g:currentmode[mode()]=='V·Block')?'\ \ V-BLOCK\ ':''}
-set statusline+=%#NormalColor#%{(g:currentmode[mode()]=='COMMAND')?'\ \ COMMAND\ ':''}
-set statusline+=%#NormalColor#%{(g:currentmode[mode()]=='FINDER')?'\ \ FINDER\ ':''}
-set statusline+=%6*\ %f
-set statusline+=\ %6*\ %{&modified?'[+]':''}
-set statusline+=\ %=
-set statusline+=\ %6*%y
-set statusline+=\ %1*\ %v:%l\/%L
-set statusline+=\ %6*\ [%p%%]
-set statusline+=\ "
 ]])
-vim.opt.laststatus=3
+
+vim.opt.laststatus = 3

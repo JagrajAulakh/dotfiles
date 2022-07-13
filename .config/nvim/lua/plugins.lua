@@ -63,6 +63,10 @@ Plug 'MunifTanjim/prettier.nvim'
 -- Markdown stuff
 Plug 'ixru/nvim-markdown'
 
+-- Status line
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+
 vim.call('plug#end')
 
 
@@ -75,3 +79,4 @@ require('pluginconf.luasnip')
 require('pluginconf.null-ls')
 require('pluginconf.prettier')
 require('pluginconf.comment')
+require('pluginconf.lualine')
