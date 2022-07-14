@@ -22,3 +22,5 @@ alias vv='pushd ~/.config/nvim/; vim init.lua; popd'
 
 alias here='thunar 2>&1 &'
 alias sv='. env/bin/activate'
+
+alias dc='docker-compose'
