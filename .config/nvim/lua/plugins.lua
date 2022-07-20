@@ -45,6 +45,7 @@ Plug 'mattn/emmet-vim'
 Plug 'gryf/wombat256grf'
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim'
+Plug 'norcalli/nvim-colorizer.lua' -- Fast color highlighter written in lua
 
 -- For automatically reloading buffer on file change
 Plug 'djoshea/vim-autoread'
@@ -54,7 +55,6 @@ Plug 'tikhomirov/vim-glsl'       -- GLSL
 Plug 'mboughaba/i3config.vim'    -- i3wm
 Plug 'yuezk/vim-js'              -- JavaScript
 Plug 'maxmellon/vim-jsx-pretty'  -- JSX (JavaScript XML)
-Plug 'ap/vim-css-color'
 
 -- PRETTIER
 -- *Uses null-ls plugin
@@ -80,3 +80,4 @@ require('pluginconf.null-ls')
 require('pluginconf.prettier')
 require('pluginconf.comment')
 require('pluginconf.lualine')
+require('pluginconf.nvim-colorizer')

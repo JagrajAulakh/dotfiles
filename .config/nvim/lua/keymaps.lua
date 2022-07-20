@@ -5,7 +5,7 @@ vim.g.mapleader = ' '
 local opts = { noremap = true }
 
 vim.keymap.set('n', '<leader>v', ':source ~/.config/nvim/init.lua<CR>', opts)
-vim.keymap.set('n', '<Leader>s', ':setlocal spell!<CR>', opts)
+vim.keymap.set('n', '<Leader>ss', ':setlocal spell!<CR>', opts)
 vim.keymap.set('n', 'j', 'gj', opts)
 vim.keymap.set('n', 'k', 'gk', opts)
 
@@ -71,4 +71,7 @@ end, { silent = true })
 
 
 -- Dispatch
-vim.keymap.set("n", "<Leader>o", function() vim.cmd([[Dispatch ~/scripts/opener.sh "%"]]) end, { noremap = true })
+vim.keymap.set("n", "<Leader>o", ':Dispatch! ~/scripts/opener.sh "%"<CR>', { noremap = true })
+
+-- Source snippets
+vim.keymap.set("n", "<Leader>sr", ':source ~/.config/nvim/lua/pluginconf/luasnip.lua<CR>', { noremap = true })
