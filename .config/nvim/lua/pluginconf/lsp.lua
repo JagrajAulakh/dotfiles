@@ -1,16 +1,19 @@
 -- Native LSP Setup
 local on_attach = function(client, bufnr)
-	local opts = { noremap = true }
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gy", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>dj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>dk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>dl", "<cmd>Telescope diagnostics<cr>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+	local opts = { noremap = true, buffer = bufnr }
+	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+	vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+	vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, opts)
+	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+	vim.keymap.set("n", "<Leader>dj", vim.diagnostic.goto_next, opts)
+	vim.keymap.set("n", "<Leader>dk", vim.diagnostic.goto_prev, opts)
+	vim.keymap.set("n", "<Leader>dl", "<cmd>Telescope diagnostics<cr>", opts)
+	vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, opts)
+	vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
+	-- Formatting
+	vim.keymap.set("n", "<Leader>l", vim.lsp.buf.formatting, { noremap = true })
+	vim.keymap.set("x", "<Leader>l", vim.lsp.buf.range_formatting, { noremap = true })
 end
 
 local lsp = require('lspconfig')
@@ -32,6 +35,7 @@ end
 lsp.tsserver.setup {
 	capabilities = capabilities,
 	on_attach = function(client, bufnr)
+		-- Disable tsserver formatting so prettier can be used
 		client.resolved_capabilities.document_formatting = false
 		client.resolved_capabilities.document_range_formatting = false
 		on_attach(client, bufnr)
