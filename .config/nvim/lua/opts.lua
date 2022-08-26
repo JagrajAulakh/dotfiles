@@ -39,3 +39,6 @@ vim.opt.textwidth = 88
 vim.opt.termguicolors = true
 vim.opt.spell = false
 vim.opt.spelllang = 'en_ca'
+
+vim.opt.list = true
+vim.opt.listchars = 'tab:| '

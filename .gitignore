@@ -39,6 +39,7 @@
 .config/Thunar/
 .config/UnityHub/
 .config/Unknown Organization/
+.config/Upscayl/
 .config/autostart/
 .config/balena-etcher/
 .config/bashtop/
@@ -62,6 +63,7 @@
 .config/fontconfig/
 .config/freerdp/
 .config/freezer/
+.config/ftb-app/
 .config/gdlauncher/
 .config/gdlauncher_next/
 .config/github.com/
@@ -126,12 +128,14 @@
 .flake8
 .fltk/
 .fonts/
+.ftba/
 .gitkraken/
 .gnupg/
 .gradle/
 .gtkrc-2.0
 .icons/
 .idlerc/
+.install4j
 .java/
 .lesshst
 .local/
@@ -147,6 +151,7 @@
 .npm/
 .nuget/
 .nvidia-settings-rc
+.paradoxlauncher/
 .pki/
 .plastic4/
 .psensor/
