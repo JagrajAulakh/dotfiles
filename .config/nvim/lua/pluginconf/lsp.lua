@@ -20,7 +20,7 @@ local lsp = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- List of language servers to apply the default configuration to
-local servers = { 'pyright', 'vimls', 'clangd', 'jdtls', 'gopls', 'tailwindcss' }
+local servers = { 'pyright', 'vimls', 'clangd', 'jdtls', 'gopls', 'tailwindcss', 'texlab' }
 for _, server in pairs(servers) do
 	lsp[server].setup {
 		capabilities = capabilities,
