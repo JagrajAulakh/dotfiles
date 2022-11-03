@@ -12,12 +12,12 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, opts)
 	vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
 	-- Formatting
-	vim.keymap.set("n", "<Leader>l", vim.lsp.buf.formatting, { noremap = true })
+	vim.keymap.set("n", "<Leader>l", function() vim.lsp.buf.format { async = true } end, { noremap = true })
 	vim.keymap.set("x", "<Leader>l", vim.lsp.buf.range_formatting, { noremap = true })
 end
 
 local lsp = require('lspconfig')
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- List of language servers to apply the default configuration to
 local servers = { 'pyright', 'vimls', 'clangd', 'jdtls', 'gopls', 'tailwindcss', 'texlab' }
@@ -36,8 +36,8 @@ lsp.tsserver.setup {
 	capabilities = capabilities,
 	on_attach = function(client, bufnr)
 		-- Disable tsserver formatting so prettier can be used
-		client.resolved_capabilities.document_formatting = false
-		client.resolved_capabilities.document_range_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
+		vim.pretty_print(client)
 		on_attach(client, bufnr)
 	end,
 }
