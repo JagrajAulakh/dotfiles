@@ -12,15 +12,15 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, opts)
 	vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
 	-- Formatting
-	vim.keymap.set("n", "<Leader>l", function() vim.lsp.buf.format { async = true } end, { noremap = true })
-	vim.keymap.set("x", "<Leader>l", vim.lsp.buf.range_formatting, { noremap = true })
+	vim.keymap.set("n", "<Leader>l", function() vim.lsp.buf.format { async = false } end, { noremap = true })
+	vim.keymap.set("x", "<Leader>l", vim.lsp.buf.format, { noremap = true })
 end
 
 local lsp = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- List of language servers to apply the default configuration to
-local servers = { 'pyright', 'vimls', 'clangd', 'jdtls', 'gopls', 'tailwindcss', 'texlab' }
+local servers = { 'pyright', 'vimls', 'ccls', 'jdtls', 'gopls', 'tailwindcss', 'texlab' }
 for _, server in pairs(servers) do
 	lsp[server].setup {
 		capabilities = capabilities,

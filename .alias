@@ -11,7 +11,7 @@ alias src='source ~/.alias; source ~/.bashrc; source ~/.bash_profile'
 alias cls='clear'
 alias la='ls -lah --group-directories-first'
 
-alias cds='cd ~/Documents/School/Sem\ 6'
+alias cds='cd ~/Documents/School/Sem\ 8'
 
 alias va='vim ~/.alias; src'
 alias vb='vim ~/.bashrc'
@@ -24,3 +24,5 @@ alias here='thunar 2>&1 &'
 alias sv='. env/bin/activate'
 
 alias dc='docker-compose'
+alias courtroom='rsync -av --progress ~/Videos/courtroom/ thinkcenter:/mnt/raid5array/courtroom/'
+alias rocketleague='rsync -av --progress ~/Videos/Rocket\ League/ thinkcenter:/mnt/raid5array/rl/'
