@@ -20,7 +20,7 @@ local lsp = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- List of language servers to apply the default configuration to
-local servers = { 'pyright', 'vimls', 'ccls', 'jdtls', 'gopls', 'tailwindcss', 'texlab' }
+local servers = { 'pyright', 'vimls', 'ccls', 'jdtls', 'gopls', 'texlab' }
 for _, server in pairs(servers) do
 	lsp[server].setup {
 		capabilities = capabilities,
@@ -32,12 +32,20 @@ end
 -- SPECIALIZED CONFIGURATION FOR LANGUAGE SERVERS
 -------------------------------------------------
 
+lsp.tailwindcss.setup {
+	capabilities = capabilities,
+	on_attach = function(client, bufnr)
+		vim.pretty_print(lsp.util)
+		on_attach(client, bufnr)
+	end,
+	root_dir = lsp.util.find_git_ancestor
+}
+
 lsp.tsserver.setup {
 	capabilities = capabilities,
 	on_attach = function(client, bufnr)
 		-- Disable tsserver formatting so prettier can be used
 		client.server_capabilities.documentFormattingProvider = false
-		vim.pretty_print(client)
 		on_attach(client, bufnr)
 	end,
 }
