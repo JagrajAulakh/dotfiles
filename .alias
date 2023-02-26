@@ -21,7 +21,7 @@ alias vr='vim ~/.config/ranger/'
 alias vv='pushd ~/.config/nvim/; vim init.lua; popd'
 
 alias here='thunar 2>&1 &'
-alias sv='. env/bin/activate'
+alias sv='. venv/bin/activate'
 
 alias dc='docker-compose'
 alias courtroom='rsync -av --progress ~/Videos/courtroom/ thinkcenter:/mnt/raid5array/courtroom/'

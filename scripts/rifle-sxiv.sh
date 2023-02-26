@@ -33,13 +33,13 @@ tmp="$TMPDIR/sxiv_rifle_$$"
 
 listfiles () {
     find -L "///${1%/*}" \( ! -path "///${1%/*}" -prune \) -type f -print |
-      grep -iE '\.(jpe?g|png|gif|webp|tiff|bmp)$' |
+      grep -iE '\.(jpe?g|png|gif|webp|tiff|bmp|ppm|pgm)$' |
       sort | tee "$tmp"
 }
 
 is_img () {
     case "${1##*.}" in
-        "jpg"|"jpeg"|"png"|"gif"|"webp"|"tiff"|"bmp"|"JPG"|"JPEG"|"PNG"|"GIF"|"WEBP"|"TIFF"|"BMP") return 0 ;;
+        "jpg"|"jpeg"|"png"|"gif"|"webp"|"tiff"|"bmp"|"JPG"|"JPEG"|"PNG"|"GIF"|"WEBP"|"TIFF"|"BMP"|"ppm"|"pgm"|"PPM"|"PGM") return 0 ;;
         *) return 1 ;;
     esac
 }
