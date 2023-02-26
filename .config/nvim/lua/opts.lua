@@ -42,3 +42,5 @@ vim.opt.spelllang = 'en_ca'
 
 vim.opt.list = true
 vim.opt.listchars = 'tab:| '
+
+vim.o.guifont = "JetbrainsMonoMedium Nerd Font:h12"
