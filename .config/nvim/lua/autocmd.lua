@@ -22,3 +22,9 @@ augroup troll_zain_lmao
 	autocmd BufReadPost COMMIT_EDITMSG setlocal colorcolumn=0 textwidth=0 | nmap <silent> <leader>z mzA @zainaraza43`z
 augroup END
 ]])
+
+vim.cmd([[
+augroup python_spaces
+	set expandtab
+augroup END
+]])
