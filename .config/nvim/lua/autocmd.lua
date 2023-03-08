@@ -25,6 +25,6 @@ augroup END
 
 vim.cmd([[
 augroup python_spaces
-	set expandtab
+	autocmd BufReadPost *.py set expandtab
 augroup END
 ]])
