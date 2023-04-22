@@ -49,7 +49,7 @@ lsp.tsserver.setup {
 	end,
 }
 
-lsp.sumneko_lua.setup {
+lsp.lua_ls.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {

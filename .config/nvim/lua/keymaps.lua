@@ -22,6 +22,7 @@ vim.keymap.set('n', '<Leader>y', '"+y', opts)
 vim.keymap.set('n', '<Leader>Y', '"+y$', opts)
 vim.keymap.set('v', '<Leader>y', '"+y', opts)
 vim.keymap.set({ 'n', 'v' }, '<Leader>p', '"+p', opts)
+vim.keymap.set({ 'n', 'v' }, '<Leader>P', '"+P', opts)
 
 -- "--------------------
 -- " Tab/Window bindings
