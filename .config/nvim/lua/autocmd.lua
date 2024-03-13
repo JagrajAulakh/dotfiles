@@ -31,6 +31,6 @@ augroup END
 
 vim.cmd([[
 augroup open_folds
-	autocmd BufReadPost,FileReadPost * normal zR
+	autocmd BufEnter * normal zR
 augroup END
 ]])
