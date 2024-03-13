@@ -53,6 +53,8 @@ Plug 'norcalli/nvim-colorizer.lua' -- Fast color highlighter written in lua
 -- SYNTAX
 Plug 'tikhomirov/vim-glsl'       -- GLSL
 Plug 'mboughaba/i3config.vim'    -- i3wm
+Plug 'jparise/vim-graphql'       -- GraphQL
+Plug 'sealemar/vtl'
 
 -- Markdown stuff
 Plug 'ixru/nvim-markdown'

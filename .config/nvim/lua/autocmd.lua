@@ -28,3 +28,9 @@ augroup python_spaces
 	autocmd BufReadPost *.py set expandtab
 augroup END
 ]])
+
+vim.cmd([[
+augroup open_folds
+	autocmd BufReadPost,FileReadPost * normal zR
+augroup END
+]])

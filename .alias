@@ -15,6 +15,7 @@ alias cds='cd ~/Documents/School/Sem\ 8'
 
 alias va='vim ~/.alias; src'
 alias vb='vim ~/.bashrc'
+alias ve='vim ~/.env'
 alias vbp='vim ~/.bash_profile'
 alias vmw='vim ~/.config/MangoHud/Warframe.conf'
 alias vr='vim ~/.config/ranger/'

@@ -31,10 +31,9 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.mouse = 'a'
 vim.opt.cmdheight = 1
-vim.opt.updatetime = 300
 vim.opt.showmode = false
-vim.opt.colorcolumn = '88'
-vim.opt.textwidth = 88
+-- vim.opt.colorcolumn = '88'
+-- vim.opt.textwidth = 88
 
 vim.opt.termguicolors = true
 vim.opt.spell = false

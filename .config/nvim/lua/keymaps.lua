@@ -29,6 +29,9 @@ vim.keymap.set({ 'n', 'v' }, '<Leader>P', '"+P', opts)
 -- "--------------------
 vim.keymap.set('n', 'ge', ':tabedit ', opts)
 vim.keymap.set('n', '<C-n>', ':tabnew<CR>', opts)
+vim.keymap.set('n', '<S-h>', ':tabprev<CR>', opts)
+vim.keymap.set('n', '<S-l>', ':tabnext<CR>', opts)
+
 
 vim.keymap.set('n', '<C-e>', ':RnvimrToggle<CR>', opts)
 vim.keymap.set('t', '<C-e>', '<C-\\><C-n>:RnvimrToggle<CR>', opts)
@@ -43,6 +46,7 @@ opts = { noremap = true }
 --- Telecope/Finding stuff
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts)
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
+vim.keymap.set('n', '<leader>fs', '<cmd>Telescope git_status<cr>', opts)
 vim.keymap.set('n', '<leader>fr', '<cmd>Telescope resume<cr>', opts)
 vim.keymap.set('n', '<F3>', ':Rg ', opts)
 

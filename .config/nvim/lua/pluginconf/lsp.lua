@@ -20,7 +20,7 @@ local lsp = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- List of language servers to apply the default configuration to
-local servers = { 'pyright', 'vimls', 'ccls', 'jdtls', 'gopls', 'texlab', 'cssls' }
+local servers = { 'pyright', 'vimls', 'ccls', 'jdtls', 'gopls', 'texlab', 'cssls', "csharp_ls" }
 for _, server in pairs(servers) do
 	lsp[server].setup {
 		capabilities = capabilities,
@@ -32,12 +32,20 @@ end
 -- SPECIALIZED CONFIGURATION FOR LANGUAGE SERVERS
 -------------------------------------------------
 
-lsp.tailwindcss.setup {
+-- lsp.tailwindcss.setup {
+-- 	capabilities = capabilities,
+-- 	on_attach = function(client, bufnr)
+-- 		on_attach(client, bufnr)
+-- 	end,
+-- 	root_dir = lsp.util.find_git_ancestor
+-- }
+
+lsp.csharp_ls.setup {
 	capabilities = capabilities,
-	on_attach = function(client, bufnr)
-		on_attach(client, bufnr)
-	end,
-	root_dir = lsp.util.find_git_ancestor
+	on_attach = on_attach,
+	root_dir = function(startpath)
+		return lsp.util.root_pattern("*.csproj")(startpath)
+	end
 }
 
 lsp.tsserver.setup {
