@@ -4,14 +4,15 @@
 
 alias vim='nvim'
 alias v='vim'
-alias dotfiles='git --git-dir $HOME/dotfiles.git --work-tree $HOME'
+alias nv='neovide --fork'
+
 alias code='cd ~/Documents/code/'
 
 alias src='source ~/.alias; source ~/.bashrc; source ~/.bash_profile'
 alias cls='clear'
 alias la='ls -lah --group-directories-first'
 
-alias cds='cd ~/Documents/School/Sem\ 8'
+alias dotfiles='git --git-dir $HOME/dotfiles.git --work-tree $HOME'
 
 alias va='vim ~/.alias; src'
 alias vb='vim ~/.bashrc'
@@ -26,4 +27,8 @@ alias sv='. venv/bin/activate'
 
 alias dc='docker-compose'
 alias courtroom='rsync -av --progress ~/Videos/courtroom/ thinkcenter:/mnt/raid5array/courtroom/'
-alias rocketleague='rsync -av --progress ~/Videos/Rocket\ League/ thinkcenter:/mnt/raid5array/rl/'
+alias rocketleague='rsync -av --progress --delete ~/Videos/Rocket\ League/ thinkcenter:/mnt/raid5array/rl/'
+alias reports='rsync -av --progress "/home/juggy1233/Documents/important documents/trading/" "thinkcenter:/mnt/raid5array/Documents/Jagraj Aulakh/Important Documents/trading/"'
+
+alias yt-dlp.mp4='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"'
+alias storage='sudo mount /dev/disk/by-partuuid/6bff23fd-55b2-4fe5-8fd9-9ad721d1206d /mnt/storage/'

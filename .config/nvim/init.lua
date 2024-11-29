@@ -14,7 +14,7 @@ require('keymaps')
 require('autocmd')
 require('neovide')
 
-vim.g.gruvbox_contrast_dark = "soft"
+vim.g.gruvbox_contrast_dark = "hard"
 vim.g.gruvbox_italic = 0
 vim.g.gruvbox_transparent_bg = 1
 vim.cmd('colorscheme gruvbox')

@@ -43,7 +43,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+    xterm-kitty|xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -164,3 +164,4 @@ gsettings set org.gnome.desktop.sound event-sounds false
 # POWERLINE_BASH_SELECT=1
 # . /usr/share/powerline/bindings/bash/powerline.sh
 
+[[ $(tty) == /dev/tty1 ]] && exec Hyprland

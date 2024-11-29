@@ -8,5 +8,7 @@
     <property name="thumbnails" type="empty">
       <property name="size" type="uint" value="5"/>
     </property>
+    <property name="height" type="uint" value="477"/>
+    <property name="width" type="uint" value="585"/>
   </property>
 </channel>

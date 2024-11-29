@@ -7,7 +7,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/juggy1233/Pictures/backgrounds/wallpapersden.com_macos-big-sur-daylight_2560x1440.jpg"/>
+          <property name="last-image" type="string" value="/home/juggy1233/Pictures/backgrounds/wallhaven-j89gkq.jpg"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -106,7 +106,7 @@
           <property name="image-style" type="int" value="5"/>
           <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-verticals.png"/>
         </property>
-        <property name="image-path" type="string" value="/home/juggy1233/Pictures/backgrounds/wallpapersden.com_macos-big-sur-daylight_2560x1440.jpg"/>
+        <property name="image-path" type="string" value="/home/juggy1233/Pictures/backgrounds/wallhaven-j89gkq.jpg"/>
         <property name="image-show" type="bool" value="true"/>
         <property name="image-style" type="int" value="5"/>
       </property>
@@ -478,7 +478,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="3"/>
-          <property name="last-image" type="string" value="/home/juggy1233/Pictures/backgrounds/wallpapersden.com_macos-big-sur-daylight_2560x1440.jpg"/>
+          <property name="last-image" type="string" value="/home/juggy1233/Pictures/backgrounds/wallhaven-j89gkq.jpg"/>
           <property name="rgba1" type="array">
             <value type="double" value="0.14902000000000001"/>
             <value type="double" value="0.17254900000000001"/>

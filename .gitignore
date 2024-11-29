@@ -145,8 +145,6 @@
 .config/wireplumber/
 .config/wireshark/
 .config/xfburn/
-.config/xfce4-dict/
-.config/xfce4/
 .config/yarn/
 .config/zoomus.conf
 .dmrc

@@ -7,7 +7,7 @@
     <property name="blank-on-ac" type="int" value="0"/>
     <property name="dpms-on-ac-sleep" type="uint" value="0"/>
     <property name="power-button-action" type="uint" value="4"/>
-    <property name="dpms-enabled" type="bool" value="true"/>
+    <property name="dpms-enabled" type="bool" value="false"/>
     <property name="general-notification" type="bool" value="false"/>
   </property>
 </channel>

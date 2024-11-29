@@ -169,8 +169,8 @@
         <property name="Y" type="double" value="1"/>
       </property>
       <property name="Position" type="empty">
-        <property name="X" type="int" value="0"/>
-        <property name="Y" type="int" value="0"/>
+        <property name="X" type="int" value="2560"/>
+        <property name="Y" type="int" value="134"/>
       </property>
     </property>
     <property name="DisplayPort-2" type="string" value="Lenovo Group Limited 27&quot;">
@@ -443,8 +443,8 @@
         <property name="Y" type="double" value="1"/>
       </property>
       <property name="Position" type="empty">
-        <property name="X" type="int" value="0"/>
-        <property name="Y" type="int" value="0"/>
+        <property name="X" type="int" value="2560"/>
+        <property name="Y" type="int" value="134"/>
       </property>
     </property>
     <property name="DisplayPort-2" type="string" value="Lenovo Group Limited 27&quot;">

@@ -172,8 +172,8 @@
         <value type="string" value="xfce4-terminal-emulator.desktop"/>
       </property>
       <property name="recent" type="array">
-        <value type="string" value="xfce4-terminal-emulator.desktop"/>
         <value type="string" value="xfce4-web-browser.desktop"/>
+        <value type="string" value="xfce4-terminal-emulator.desktop"/>
         <value type="string" value="org.gtk.gtk4.NodeEditor.desktop"/>
         <value type="string" value="xfce4-file-manager.desktop"/>
         <value type="string" value="xfce-keyboard-settings.desktop"/>
@@ -196,6 +196,11 @@
     <property name="plugin-1" type="string" value="separator">
       <property name="expand" type="bool" value="false"/>
       <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="clipman" type="empty">
+      <property name="tweaks" type="empty">
+        <property name="never-confirm-history-clear" type="bool" value="false"/>
+      </property>
     </property>
   </property>
 </channel>

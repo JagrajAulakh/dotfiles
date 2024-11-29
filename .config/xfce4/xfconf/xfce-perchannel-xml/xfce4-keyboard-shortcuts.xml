@@ -45,7 +45,6 @@
       <property name="&lt;Super&gt;e" type="string" value="thunar"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Escape" type="string" value="xkill"/>
       <property name="override" type="bool" value="true"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;m" type="string" value="clementine"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;c" type="string" value="exo-open --launch WebBrowser"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;d" type="string" value="discord"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;d" type="string" value="rofi -show drun"/>
@@ -68,6 +67,8 @@
       <property name="Calculator" type="string" value="/home/juggy1233/.screenlayout/leftscreenonly.sh"/>
       <property name="&lt;Super&gt;t" type="string" value="exo-open --launch TerminalEmulator tty-clock -sxctBd 0.5s -C 7"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="transmission-qt"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;m" type="string" value="strawberry"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;p" type="string" value="xfce4-display-settings"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
